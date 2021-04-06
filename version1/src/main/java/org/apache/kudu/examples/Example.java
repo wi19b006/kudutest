@@ -99,7 +99,12 @@ public class Example {
       row.addDouble("value", GetRandomNumber());
       row.addString("version", "1");
       session.apply(insert);
-      Thread.sleep(200);
+      try{
+        Thread.sleep(200);
+      }
+      catch (InterruptedException ex){
+        Thread.currentThread().interrupt();
+      }
     }
 
     // Call session.close() to end the session and ensure the rows are
