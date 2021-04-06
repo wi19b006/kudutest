@@ -100,7 +100,7 @@ public class Example {
       row.addString("version", "1");
       session.apply(insert);
       try{
-        Thread.sleep(200);
+        Thread.sleep(50);
       }
       catch (InterruptedException ex){
         Thread.currentThread().interrupt();
