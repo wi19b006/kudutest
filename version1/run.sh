@@ -1,0 +1,1 @@
+java -DkuduMasters=localhost:7051,localhost:7151,localhost:7251 -jar target/kudu-java-test-1.0-1.jar
