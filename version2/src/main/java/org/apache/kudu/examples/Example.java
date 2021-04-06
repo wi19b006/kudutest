@@ -84,7 +84,7 @@ public class Example {
     else{
       degrees += randomDouble;
     }
-    return ((9/5) * degrees) + 32;
+    return (1.8 * degrees) + 32.0;
   }
 
   static void insertRows(KuduClient client, String tableName, int numRows) throws KuduException {
