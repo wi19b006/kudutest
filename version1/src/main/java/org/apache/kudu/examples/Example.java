@@ -45,6 +45,13 @@ public class Example {
   private static final String KUDU_MASTERS = System.getProperty("kuduMasters", "localhost:7051");
 
   static void createExampleTable(KuduClient client, String tableName)  throws KuduException {
+
+    if(client.tableExists(tableName)){
+      System.out.println("table " + tableName + " already exists");
+      return;
+    }
+
+
     // Set up a simple schema.
     List<ColumnSchema> columns = new ArrayList<>(3);
     columns.add(new ColumnSchema.ColumnSchemaBuilder("key", Type.INT32)
@@ -92,6 +99,7 @@ public class Example {
       row.addDouble("value", GetRandomNumber());
       row.addString("version", "1");
       session.apply(insert);
+      Thread.sleep(200);
     }
 
     // Call session.close() to end the session and ensure the rows are
