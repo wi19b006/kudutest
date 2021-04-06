@@ -89,7 +89,7 @@ public class Example {
       Insert insert = table.newInsert();
       PartialRow row = insert.getRow();
       row.addInt("key", i);
-      row.addString("value", GetRandomNumber());
+      row.addDouble("value", GetRandomNumber());
       row.addString("version", "1");
       session.apply(insert);
     }
