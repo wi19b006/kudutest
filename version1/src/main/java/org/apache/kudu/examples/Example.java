@@ -67,10 +67,10 @@ public class Example {
     System.out.println("Created table " + tableName);
   }
 
-  static Double GetRandomNumber(){
-    Double randomDouble=rd.nextDouble();
-    Int randomInt = rd.nextInt(6);
-    Double degrees = 32.0;
+  static double GetRandomNumber(){
+    double randomDouble=rd.nextDouble();
+    int randomInt = rd.nextInt(6);
+    double degrees = 32.0;
     if(randomInt%2==0){
       degrees -= randomDouble;
     }
